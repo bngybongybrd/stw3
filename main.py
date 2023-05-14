@@ -110,8 +110,7 @@ def results():
     
     bp_l = bp[:7]
     bp_l = bp_l.split("-")
-    bp_val = int(bp_l[0]) + int(bp_l[1])
-    bp_val = int(bp_val//2)
+    bp_val = (int(bp_l[0]) + int(bp_l[1])) // 2
 
     ch_l = ch[:7]
     ch_l = ch_l.split("-")
