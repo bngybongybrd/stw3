@@ -1,0 +1,21 @@
+<!-- Ignore -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log-in</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>My Form</h1>
+      <form method='POST', action='/home_page'>
+        <label>Email: </label>
+        <input type='text' name='email'><br><br>
+        <label>Password: </label>
+        <input type='password' name='password'><br><br>
+        <input type='submit'>
+      </form>
+
+    <a href="{{ url_for('sign_up') }}"><button>Go to Sign Up</button></a>
+  </body>
+</html>

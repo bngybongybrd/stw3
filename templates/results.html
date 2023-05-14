@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+      <!-- <div id="preloader"></div> -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Cholesterol (mmol/L)</th>
+                <th scope="col">Blood Pressure (mmHg)</th>
+                <th scope="col">Smoking Status</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <th scope="row">{{ username }}</th>
+                <td>{{ age }}</td>
+                <td>{{ gender }}</td>
+                <td>{{ ch }}</td>
+                <td>{{ bp }}</td>
+                <td>{{ smoking }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <h1>Risk Score: {{ risk_score }} </h1>
+            <p1 class="recommendations">Recommendations to take:</p1>
+            <div class="display-box" style="
+              border: 1px solid #ccc;
+              padding: 10px;
+              background-color: #f8f8f8;
+              font-family: Arial, sans-serif;
+              font-size: 16px;
+              line-height: 1.5;">
+              {% for line in responses %}
+                <p>{{ line }}</p>
+              {% endfor %}
+            </div>
+          </div>
+      <script>
+
+      var loader = document.getElementById("preloader");
+
+      window.addEventListener("load", function(){
+        loader.style.display = "none"
+      })
+      
+    </script>
+    </body>
+</html>

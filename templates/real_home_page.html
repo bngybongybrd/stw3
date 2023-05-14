@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <p id="welcome" style='
+          font-family:system-ui;
+          font-weight: bold;
+          padding-top: 15px;
+          font-size: 250%;
+          padding-left: 100px;
+          '>Welcome Back, {{ username }}</p>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <h2>Saving lives one step at a time.</h2>
+            <form action='' method='POST'>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <select class="form-control" id="age" name="age">
+                  <option value="">Select age</option>
+                  <option value="40-44">40-44</option>
+                  <option value="45-49">45-49</option>
+                  <option value="50-54">50-54</option>
+                  <option value="55-59">55-59</option>
+                  <option value="60-64">60-64</option>
+                  <option value="65-69">65-69</option>
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender">
+                  <option value="">Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="cholesterol">Cholesterol Level:</label>
+                <select class="form-control" id="cholesterol" name="cholesterol">
+                  <option value="">Select cholesterol level</option>
+                  <option value="3.0-3.9mmol/L">3.0-3.9 mmol/L</option>
+                  <option value="4.0-4.9mmol/L">4.0-4.9 mmol/L</option>
+                  <option value="5.0-5.9mmol/L">5.0-5.9 mmol/L</option>
+                  <option value="6.0-6.9mmol/L">6.0-6.9 mmol/L</option>
+                  
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="blood-pressure">Blood Pressure:</label>
+                <select class="form-control" id="blood-pressure" name="blood-pressure">
+                  <option value="">Select blood pressure</option>
+                  <option value="100-119 mmHg">100-119 mmHg</option>
+                  <option value="120-139 mmHg">120-139 mmHg</option>
+                  <option value="140-159 mmHg">140-159 mmHg</option>
+                  <option value="160-179 mmHg">160-179 mmHg</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="smoking-status">Smoking Status:</label>
+                <select class="form-control" id="smoking-status" name="smoking-status">
+                  <option value="">Select smoking status</option>
+                  <option value="smoke">Yes</option>
+                  <option value="dontsmoke">No</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+    </body>
+</html>
