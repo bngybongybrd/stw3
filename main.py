@@ -126,12 +126,15 @@ def results():
 
     if risk_score >=50:
         risk = '(High Risk)'
-    elif risk_score < 50 and risk_score >=35
+    elif risk_score < 50 and risk_score >=35:
+        risk = ("Medium Risk")
+    else:
+        risk = '(Low Risk)'
 
     
-    risk_a = risk score + risk
+    risk_a = f"{risk_score} {risk}"
     
-    return render_template('results.html', username=username, age=info[0][1], gender=info[0][2], ch=info[0][3], bp=info[0][4], smoking=info[0][5], responses=responses, risk_score=risk_score)
+    return render_template('results.html', username=username, age=info[0][1], gender=info[0][2], ch=info[0][3], bp=info[0][4], smoking=info[0][5], responses=responses, risk_a=risk_a)
 
 
 
