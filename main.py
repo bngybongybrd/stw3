@@ -117,7 +117,6 @@ def results():
     ch_val = float(ch_l[0]) + float(ch_l[1])
     ch_val = int(ch_val//2)
     
-    
     if smoking == "smoke":
         risk_score = (age_val *age_weight + gender_weight*gender_val + bp_val*bp_weight + ch_val*ch_weight) + 1
     else:
