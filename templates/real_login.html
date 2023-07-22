@@ -11,15 +11,15 @@
     </head>
     <body onload="myFunction()" class="login_body">
         <div id="loading-screen">
-          <div class="spinner"></div>
+            <div class="spinner"></div>
+          <br>
           <p class="loadtext">Optimising your ideal medical experience</p>
         </div>
         <main class="form-signin w-100 m-auto">
             <form id="login" method='POST', action='/'>
-              <img class="login_mb-4" src="{{ url_for('static', filename='cardiologist.png') }}" alt="" width="100px" height="400px">
+              <img class="login_mb-4" src="{{ url_for('static', filename='doctor.png') }}" alt="" width="100px" height="400px">
               <h1 class="h3 login_mb-3 fw-normal">Please sign in</h1>
               <h2>
-                <!-- its here -->
                 {% with messages = get_flashed_messages() %}
                   {% if messages %}
                     <ul class="flashes">
@@ -39,7 +39,7 @@
                 <label for="floatingPassword">Password</label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-              <p class="mt-5 login_mb-3 text-body-secondary">&copy; didumfernando, yingxuan, shibo 2023</p>
+              <p class="mt-5 login_mb-3 text-body-secondary"></p>
             </form>
             <div class="border-top pt-3 login_mb-3">
               <small class="text-muted">

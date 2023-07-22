@@ -54,17 +54,17 @@ def sign_up(email_input, pw_input, username_input):
         #flash("Sign up successful", "success")
         return True #redirect(url_for('login')) # change the name of the '' field
 
-def insert_personal_info(email, age, gender, ch, bp, smoking):
+def insert_personal_info(email, age, gender,activity,cal,carbs,fat, smoking,alcohol,bmi,pregnant):
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS personalinfo (email TEXT PRIMARY KEY, age TEXT, gender TEXT, ch TEXT, bp TEXT, smoking BOOLEAN)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS personalinfo (email TEXT PRIMARY KEY, age TEXT, gender TEXT, activity TEXT, cal TEXT,carbs TEXT, fat TEXT, smoking BOOLEAN, alcohol BOOLEAN,bmi TEXT, pregnant BOOLEAN )''')
     c.execute('''SELECT * FROM personalinfo WHERE email = (?)''', (email,))
 
     row = c.fetchall()
     if len(row) == 0:
-      c.execute('''INSERT INTO personalinfo VALUES (?, ?, ?, ?, ?, ?)''', (email, age, gender, ch, bp, smoking))
+      c.execute('''INSERT INTO personalinfo VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', (email, age, gender,activity,cal,carbs,fat, smoking,alcohol,bmi,pregnant))
     else:
-      c.execute('''UPDATE personalinfo SET email=?, age=?, gender=?, ch=?, bp=?, smoking=? WHERE email=?''', (email, age, gender, ch, bp, smoking, email))
+      c.execute('''UPDATE personalinfo SET email=?, age=?, gender=?, activity=?, cal =?, carbs =?, fat=?, smoking=?,bmi=?,pregnant=? WHERE email=?''', (email, age, gender,activity,cal,carbs,fat, smoking,alcohol,bmi,pregnant))
 
     conn.commit()
     c.close()
@@ -72,7 +72,7 @@ def insert_personal_info(email, age, gender, ch, bp, smoking):
 def get_personal_info(email):
     conn = sqlite3.connect('data.db')
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS personalinfo (email TEXT PRIMARY KEY, age TEXT, gender TEXT, ch TEXT, bp TEXT, smoking BOOLEAN)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS personalinfo (email TEXT PRIMARY KEY, age TEXT, gender TEXT, activity TEXT, cal TEXT,carbs TEXT, fat TEXT, smoking BOOLEAN, alcohol BOOLEAN,bmi TEXT, pregnant BOOLEAN )''')
     c.execute('''SELECT * FROM personalinfo WHERE email = (?)''', (email,))
 
     row = c.fetchall()

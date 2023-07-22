@@ -17,9 +17,13 @@
                 <th scope="col">Username</th>
                 <th scope="col">Age</th>
                 <th scope="col">Gender</th>
-                <th scope="col">Cholesterol (mmol/L)</th>
-                <th scope="col">Blood Pressure (mmHg)</th>
+                <th scope="col">Activity level</th>
+                <th scope="col">Calorie intake</th>
+                <th scope="col">Fat intake</th>
                 <th scope="col">Smoking Status</th>
+                <th scope="col">Alcohol Status</th>
+                <th scope="col">Calculated BMI</th>
+                  
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -27,14 +31,18 @@
                 <th scope="row">{{ username }}</th>
                 <td>{{ age }}</td>
                 <td>{{ gender }}</td>
-                <td>{{ ch }}</td>
-                <td>{{ bp }}</td>
+                <td>{{ activity }}</td>
+                <td>{{ cal }}</td>
+                <td>{{ carbs }}</td>
+                <td>{{ fat }}</td>
                 <td>{{ smoking }}</td>
+                <td>{{ alcohol }}</td>
+                <td>{{ bmi }}</td>
+                <td>{{ pregnant }}</td>
               </tr>
             </tbody>
           </table>
           <div>
-            <h1>Risk Score: {{ risk_a }} </h1>
             <h3 class="recommendations">Recommendations to take:</h3>
             <div class="display-box" style="
               border: 1px solid #ccc;
