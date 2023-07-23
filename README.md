@@ -2,6 +2,10 @@
 
 Prototype of webapp as described in the proposal
 
+Many features not included as of now
+
+Form is just a simple representation of user inputted personal information
+
 API does not work to prevent unwanted billing.
 (submit button does not work)
 
